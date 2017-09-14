@@ -1,140 +1,493 @@
-
+<!--
+Author: ferry francois bakongo
+Author URL: https://savant1.github.io/ferry/
+License: no licence
+License URL: none
+-->
 <!DOCTYPE html>
-<html>
-<head>
-  <title>FERRY FRANCOIS BAKONGO | SAVANT1</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
-    html, body {
-      overflow: hidden;
-      margin: 0;
-    }
-    body {
-      font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial, sans-serif;
-      color: #fc4c58;
-      background: url("http://gemcitychorus.org/sites/gemcitychorus.org/files/img_misc/under-construction.jpg") 270px 0 no-repeat;
-    }
-    #wrapper {
-      position: absolute;
-      left: 0;
-      width: 600px;
-      text-align: center;
-      top: 50%;
-      left: 50%;
-      margin-left: -300px;
-      margin-top: -160px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-    h1 {
-      font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 700;
-      font-size: 30px;
-      letter-spacing: 9px;
-      text-transform: uppercase;
-      margin: 12px 0;
-      left: 4px;
-    }
-    h2 {
-      color: rgba(226, 26, 41, 0.72);
-      font-weight: normal;
-      font-size: 15px;
-      letter-spacing: .12em;
-      margin-bottom: 30px;
-      left: 3px;
-    }
-    h1, h2 {
-      position: relative;
-    }
-    p {
-      font-size: 14px;
-      line-height: 2em;
-      margin: 0;
-      letter-spacing: 2px;
-    }
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-    a {
-      color: rgba(182, 31, 39, 0.92);
-      text-decoration: none;
-      transition: color .2s ease;
-    }
-    a:hover {
-      color: #f33;
-    }
-    p a {
-      color: #3809fc;
-    }
-  </style>
-</head>
+<html lang="en">
+	<head>
+		<title>ferry francois bakongo  | Home :: personnal website</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="ferry francois bakongo, maxteco-technologies, invest-logistic, google, ionic, angularjs, android, bootstrap, Android Compatible web template,
+			SmartPhone, WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design, ios" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!-- Custom Theme files -->
+		<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+		<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+		<link rel="stylesheet" href="css/lightbox.css">
+		<!-- //Custom Theme files -->
+		<!-- js -->
+		<script src="js/jquery-2.2.3.min.js"></script>
+		<!-- //js -->
+		<!-- web-fonts -->
+		<link href='//fonts.googleapis.com/css?family=Text+Me+One' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+		<!-- //web-fonts -->
+	</head>
 <body>
-<div id="wrapper">
-  <h1>FERRY FRANCOIS BAKONGO | SAVANT1</h1>
-  <h2>Un seul souci, résoudre vos soucis :)</h2>
-  <p><a href="https://www.youtube.com/channel/UCsVh6Vh2KsSFTn9rhUlAceg" target="_blank">Chaine Youtube</a></p>
-  <p><a href="https://twitter.com/ferryfrancois17" target="_blank">Twitter</a></p>
-  <p><a href="https://www.facebook.com/ferry.francois.bakongo" target="_blank">Facebook</a></p>
-  <p><a href="https://plus.google.com/+FerryFran%C3%A7oisbakongo" target="_blank">Google+</a></p>
-  <br>
-</div>
-<canvas></canvas>
-<script>
-  document.addEventListener('touchmove', function (e) {
-    e.preventDefault()
-  })
-  var c = document.getElementsByTagName('canvas')[0],
-          x = c.getContext('2d'),
-          pr = window.devicePixelRatio || 1,
-          w = window.innerWidth,
-          h = window.innerHeight,
-          f = 90,
-          q,
-          m = Math,
-          r = 0,
-          u = m.PI*2,
-          v = m.cos,
-          z = m.random
-  c.width = w*pr
-  c.height = h*pr
-  x.scale(pr, pr)
-  x.globalAlpha = 0.6
-  function i(){
-    x.clearRect(0,0,w,h)
-    q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
-    while(q[1].x<w+f) d(q[0], q[1])
-  }
-  function d(i,j){
-    x.beginPath()
-    x.moveTo(i.x, i.y)
-    x.lineTo(j.x, j.y)
-    var k = j.x + (z()*2-0.25)*f,
-            n = y(j.y)
-    x.lineTo(k, n)
-    x.closePath()
-    r-=u/-50
-    x.fillStyle = '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16)
-    x.fill()
-    q[0] = q[1]
-    q[1] = {x:k,y:n}
-  }
-  function y(p){
-    var t = p + (z()*2-1.1)*f
-    return (t>h||t<0) ? y(p) : t
-  }
-  document.onclick = i
-  document.ontouchstart = i
-  i()
-</script>
+	<!-- top-nav -->
+	<div class="top-nav">
+		<div class="container">
+			<div class="navbar-header logo">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					Menu
+				</button>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div class="menu">
+					<ul class="nav navbar"> 
+						<li><a href="index.html" class="w3ls-hover"><span data-letters="Home">Home</span></a></li>
+						<li><a href="#" data-toggle="modal" data-target="#about" class="w3ls-hover"><span data-letters="About">About </span></a></li>
+						<li><a href="#" data-toggle="modal" data-target="#skill" class="w3ls-hover"><span data-letters="Skills">Skills</span></a></li>
+						<li><a href="#" data-toggle="modal" data-target="#experience" class="w3ls-hover"><span data-letters="Experience">Experience </span></a></li>
+						<li><a href="#" data-toggle="modal" data-target="#education" class="w3ls-hover"><span data-letters="Education">Education </span></a></li>
+						<li><a href="#" data-toggle="modal" data-target="#work" class="w3ls-hover"><span data-letters="Work">Work</span></a></li>
+						<li><a href="#" data-toggle="modal" data-target="#contact" class="w3ls-hover"><span data-letters="Contact">Contact </span></a></li> 
+						<!--<li><a class="w3ls-icon" href="#"><span class="glyphicon glyphicon-save"></span></a></li> -->
+					</ul>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!-- //top-nav -->
+	
+	<!-- banner --> 
+	<div class="video" data-vide-bg="video/cv">  
+		<div class="container">
+			<div class="banner-text agileinfo-text">  
+				<h1>ferry francois B.</h1>
+				<h6>Web Designer & Developer</h6>
+			</div>  
+		</div>	
+	</div>	
+	<script src="js/jquery.vide.min.js"></script>
+	<!-- //banner --> 
+	<!-- modal-about -->
+	<div class="modal fade modal-about" id="about" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"> 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">A PROPOS DE MOI</h4>
+				</div>
+				<div class="modal-body modal-spa">
+					<div class="about"> 
+						<div class="col-md-4 about-left ">
+							<img src="images/img1.jpg" class="img-responsive" alt=""/>
+						</div>
+						<div class="col-md-8 about-right wthree">
+							<h3>Hi, i'm <span>ferry francois B. </span></h3>
+							<h4>Web Designer & Developer </h4>
+							<ul class="address">
+								<li>
+									<ul class="agileits-address-text ">
+										<li><b>D.O.B</b></li>
+										<li>20-08-1992</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="agileits-address-text">
+										<li><b>PHONE </b></li>
+										<li>+237 697 929 584</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="agileits-address-text">
+										<li><b>ADDRESS </b></li>
+										<li>St Thomas, Douala, Cameroun.</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="agileits-address-text">
+										<li><b>E-MAIL </b></li>
+										<li><a href="mailto:ferryfrancois17@gmail.com"> ferryfrancois17@gmail.com</a></li>
+									</ul>
+								</li>
+								<li>
+									<ul class="agileits-address-text">
+										<li><b>WEBSITE </b></li>
+										<li><a href="https://savant1.github.io/ferry/">savant1.github.io/ferry/</a></li>
+									</ul>
+								</li>
+							</ul> 
+						</div> 
+						<div class="clearfix"> </div> 
+						<div class="about-text agileits-w3layouts"> 
+							<p>
+								Spécialisé dans les systèmes d'informations et les systèmes décisionnels (double compétence : statistique et informatique décisionnelle).
+							</p>
+							<p class="agile-br">
+								J'ai poursuivi de nombreuse certification dans le domaine du génie logiciel ainsi qu’en réseau et télécommunication après trois ans de License en Informatique l’université de douala ou je suis en train de faire mon cycle de miage.
+							</p>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	<!-- //modal-about -->
+	<!-- modal-skills -->
+	<div class="modal fade modal-skills" id="skill" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"> 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">My Skills</h4>
+				</div>
+				<div class="modal-body modal-spa">
+					<div class="skills"> 
+						<div class="col-md-6 bar-grids">
+							<h4><span class="glyphicon glyphicon-cog"></span> Technical Skills </h4>
+							<h6>web design  <span> 90% </span></h6>
+							<div class="progress">
+								<div class="progress-bar progress-bar-striped active" style="width: 90%">
+								</div>
+							</div>
+							<h6>ui design & developer <span> 80% </span></h6>
+							<div class="progress  w3-agile">
+								<div class="progress-bar progress-bar-striped active" style="width: 80%">
+								</div>
+							</div>
+							<h6>Javascript<span>80% </span></h6>
+							<div class="progress  w3-agile">
+								<div class="progress-bar progress-bar-striped active" style="width: 80%">
+								</div>
+							</div>
+							<h6>Backend <span> 85% </span></h6>
+							<div class="progress  w3-agile">
+								<div class="progress-bar progress-bar-striped active" style="width: 85%">
+								</div>
+							</div>
+						</div> 
+						<div class="col-md-6 bar-grids  w3-agile">
+							<h4><span class="glyphicon glyphicon-briefcase"></span> Professional Skills </h4>
+							<h6>Communication<span> 95% </span></h6>
+							<div class="progress">
+								<div class="progress-bar progress-bar-striped active" style="width: 95%">
+								</div>
+							</div>
+							<h6>Social media marketing<span> 95% </span></h6>
+							<div class="progress">
+								<div class="progress-bar progress-bar-striped active" style="width: 95%">
+								</div>
+							</div>
+							<h6>Leadership<span>90% </span></h6>
+							<div class="progress">
+								<div class="progress-bar progress-bar-striped active" style="width: 90%">
+								</div>
+							</div>
+							<h6>Confidence<span>86% </span></h6>
+							<div class="progress prgs-w3agile-last">
+								<div class="progress-bar progress-bar-striped active" style="width: 86%">
+								</div>
+							</div> 
+						</div>
+						<div class="clearfix"> </div>	
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	<!-- //modal-skills -->
+	<!-- modal-experience -->
+	<div class="modal fade modal-experience" id="experience" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"> 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Mon Experience</h4>
+				</div>
+				<div class="modal-body modal-spa">
+					<div class="experience w3-agileits-info">  
+						<div class="experience-grids">
+							<div class="experience-left">
+								<h3>2017 - Now </h3>
+								<h5>Maxteco Technologies </h5>
+							</div>
+							<div class="experience-right">
+								<h4>Full Stack Developper</h4>
+								<p>
+									configurer l'infrastructure matérielle et le système d'exploitation ainsi que les dépendances entre les différents composants logiciels à utiliser
+									concevoir, manipuler et interroger des bases de données
+									concevoir le code de 'back-end' et les API d'accès à ces données sous forme de webservices, en utilisant des langages tels que Java, PHP
+									concevoir le code de 'front-end' qui est exécuté sur la plate-forme de l'utilisateur, le plus souvent un smartphone ou un navigateur Web, dans des langages tels que Javascript et ses bibliothèques, HTML, CSS
+									être capable de gérer et planifier un projet avec des méthodes de développement agiles telles que Scrum, pouvoir interagir avec le client et ses besoins, et documenter l'ensemble des parties du projet
+
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div> 
+						<div class="experience-grids experience-grids-btm">
+							<div class="experience-left">
+								<h3>2015 - 2017</h3>
+								<h5>Full Stack Developper</h5>
+							</div>
+							<div class="experience-right">
+								<h4>Graphic Designer</h4>
+								<p>
+									configurer l'infrastructure matérielle et le système d'exploitation ainsi que les dépendances entre les différents composants logiciels à utiliser
+									concevoir, manipuler et interroger des bases de données
+									concevoir le code de 'back-end' et les API d'accès à ces données sous forme de webservices, en utilisant des langages tels que Java, PHP
+									concevoir le code de 'front-end' qui est exécuté sur la plate-forme de l'utilisateur, le plus souvent un smartphone ou un navigateur Web, dans des langages tels que Javascript et ses bibliothèques, HTML, CSS
+									être capable de gérer et planifier un projet avec des méthodes de développement agiles telles que Scrum, pouvoir interagir avec le client et ses besoins, et documenter l'ensemble des parties du projet
+
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<!--<div class="experience-grids w3-agileits">-->
+							<!--<div class="experience-left">-->
+								<!--<h3>2011 - 2013</h3>-->
+								<!--<h5>Company Name </h5>-->
+							<!--</div>-->
+							<!--<div class="experience-right">-->
+								<!--<h4>Web Designer & Developer</h4>-->
+								<!--<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis felis mattis at</p>-->
+							<!--</div>-->
+							<!--<div class="clearfix"> </div>-->
+						<!--</div>-->
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	<!-- //modal-experience -->
+	<!-- modal-education -->
+	<div class="modal fade modal-experience" id="education" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"> 
+				<div class="modal-header w3layouts">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Mes Etudes</h4>
+				</div>
+				<div class="modal-body modal-spa">
+					<div class="experience">  
+						<div class="experience-grids">
+							<div class="experience-left">
+								<h3>2012-2017<span>(5 ans)</span> </h3>
+								<h5>Openclassroom, TheDevBridge et Inter solution</h5>
+							</div>
+							<div class="experience-right">
+								<h4>Certifications (14)</h4>
+								<p>
+									De nombreuses certification Obtenue
+									dans le domaine du genie logiciel
+									et aussi en reseau et telecommunication.
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div> 
+						<div class="experience-grids experience-grids-btm">
+							<div class="experience-left">
+								<h3>2015<span>(3 ans)</span></h3>
+								<h5> Universite de DOUALA-CAMEROUN</h5>
+							</div>
+							<div class="experience-right">
+								<h4>Licence en Informatique</h4>
+								<p>
+									specialite genie logiciel
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="experience-grids experience-grids-btm">
+							<div class="experience-left">
+								<h3>2014<span>(2 ans)</span></h3>
+								<h5> Universite de DOUALA-CAMEROUN</h5>
+							</div>
+							<div class="experience-right">
+								<h4>Deug en Informatique</h4>
+								<p>
+									specialite genie logiciel
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	<!-- //modal-education -->
+	<!-- modal-gallery -->
+	<div class="modal fade modal-gallery" id="work" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"> 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">My Work</h4> 
+				</div>
+				<div class="modal-body modal-spa">
+					<div class="gallery"> 
+						<div class="gallery-row"> 
+							<div class="col-md-4 gallery-grids">
+								<div class="gallery-w3ls-hover">
+									<a href="images/g1.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley">
+										<img src="images/g1.jpg" class="img-responsive zoom-img" alt=""/>
+										<div class="view-caption">
+											<h5>View+</h5> 
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-4 gallery-grids">
+								<div class="gallery-w3ls-hover">
+									<a href="images/g2.jpg" data-lightbox="example-set" data-title="Sed ut perspiciatis unde omnis iste natus error sit">
+										<img src="images/g2.jpg" class="img-responsive zoom-img" alt=""/>
+										<div class="view-caption">
+											<h5>View+</h5> 
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-4 gallery-grids">
+								<div class="gallery-w3ls-hover">
+									<a href="images/g3.jpg" data-lightbox="example-set" data-title="Eaque ipsa quae ab illo inventore veritatis et quasi">
+										<img src="images/g3.jpg" class="img-responsive zoom-img" alt=""/>
+										<div class="view-caption">
+											<h5>View+</h5> 
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-4 gallery-grids">
+								<div class="gallery-w3ls-hover">
+									<a href="images/g4.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley">
+										<img src="images/g4.jpg" class="img-responsive zoom-img" alt=""/>
+										<div class="view-caption">
+											<h5>View+</h5> 
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-4 gallery-grids">
+								<div class="gallery-w3ls-hover">
+									<a href="images/g5.jpg" data-lightbox="example-set" data-title="Sed ut perspiciatis unde omnis iste natus error sit">
+										<img src="images/g5.jpg" class="img-responsive zoom-img" alt=""/>
+										<div class="view-caption">
+											<h5>View+</h5> 
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-4 gallery-grids">
+								<div class="gallery-w3ls-hover">
+									<a href="images/g6.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley">
+										<img src="images/g6.jpg" class="img-responsive zoom-img" alt=""/>
+										<div class="view-caption">
+											<h5>View+</h5> 
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-4 gallery-grids">
+								<div class="gallery-w3ls-hover">
+									<a href="images/g3.jpg" data-lightbox="example-set" data-title="Sed ut perspiciatis unde omnis iste natus error sit">
+										<img src="images/g3.jpg" class="img-responsive zoom-img" alt=""/>
+										<div class="view-caption">
+											<h5>View+</h5> 
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-4 gallery-grids">
+								<div class="gallery-w3ls-hover">
+									<a href="images/g1.jpg" data-lightbox="example-set" data-title="Eaque ipsa quae ab illo inventore veritatis et quasi">
+										<img src="images/g1.jpg" class="img-responsive zoom-img" alt=""/>
+										<div class="view-caption">
+											<h5>View+</h5> 
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-4 gallery-grids">
+								<div class="gallery-w3ls-hover">
+									<a href="images/g2.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley">
+										<img src="images/g2.jpg" class="img-responsive zoom-img" alt=""/>
+										<div class="view-caption">
+											<h5>View+</h5> 
+										</div>
+									</a>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<!--  light box js -->
+						<script src="js/lightbox-plus-jquery.min.js"> </script> 
+						<!-- //light box js-->  
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	<!-- //modal-gallery -->
+	<!-- modal-contact -->
+	<div class="modal fade modal-contact" id="contact" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content"> 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Get In Touch</h4>
+				</div>
+				<div class="modal-body modal-spa">
+					<div class="contact"> 
+						<div class="contact-w3lsrow">
+							<div class="col-md-6 contact-left w3-agileits">
+								<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555" allowfullscreen></iframe>-->
+
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.896282852277!2d9.760260613991974!3d4.041583397060983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDInMjkuNyJOIDnCsDQ1JzQ0LjgiRQ!5e0!3m2!1sfr!2sfr!4v1505379082859" allowfullscreen></iframe>
+							</div>
+							<!--<div class="col-md-6 contact-right">-->
+								<!--<form action="#" method="post">-->
+									<!--<div class="styled-input agile-styled-input-top">-->
+										<!--<input type="text" name="Name" required="">-->
+										<!--<label>Name</label>-->
+										<!--<span></span>-->
+									<!--</div>-->
+									<!--<div class="styled-input">-->
+										<!--<input type="text" name="Email" required=""> -->
+										<!--<label>Email</label>-->
+										<!--<span></span>-->
+									<!--</div> -->
+									<!--<div class="styled-input">-->
+										<!--<input type="text" name="Subject" required="">-->
+										<!--<label>Subject</label>-->
+										<!--<span></span>-->
+									<!--</div>-->
+									<!--<div class="styled-input">-->
+										<!--<textarea name="Message" required=""></textarea>-->
+										<!--<label>Message</label>-->
+										<!--<span></span>-->
+									<!--</div>	 -->
+									<!--<input type="submit" value="SEND">-->
+								<!--</form>-->
+							<!--</div>-->
+							<div class="clearfix"> </div>
+						</div>  
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+	<!-- //modal-contact --> 
+	
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<p>© 2017 ffb. All rights reserved | Design by <a href="https://savant1.github.io/ferry/">ffb</a></p>
+		</div>
+	</div>
+	<!-- //footer --> 
+	
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
